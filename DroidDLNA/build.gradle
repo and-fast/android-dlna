@@ -18,8 +18,6 @@ android {
 }
 
 dependencies {
-    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
-//    implementation group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '8.1.9.v20130131'
 
     implementation files('libs/cdi-api.jar')
     implementation files('libs/http-2.2.1.jar')
@@ -27,7 +25,6 @@ dependencies {
     implementation files('libs/httpcore-4.2.3.jar')
     implementation files('libs/javax.annotation_1.0.jar')
     implementation files('libs/javax.inject.jar')
-//    implementation files('libs/javax.servlet-3.0.0.v201103241009.jar')
     implementation files('libs/jetty-client-8.1.9.v20130131.jar')
     implementation files('libs/jetty-continuation-8.1.9.v20130131.jar')
     implementation files('libs/jetty-http-8.1.9.v20130131.jar')
@@ -39,8 +36,8 @@ dependencies {
     implementation files('libs/seamless-http-1.0-alpha2.jar')
     implementation files('libs/seamless-util-1.0-alpha2.jar')
     implementation files('libs/seamless-xml-1.0-alpha2.jar')
-    implementation files('libs/slf4j-api-1.6.1.jar')
-    implementation files('libs/slf4j-jdk14-1.6.1.jar')
-    implementation files('libs/universal-image-loader-1.8.4-with-sources.jar')
 
+    implementation 'org.slf4j:slf4j-api:1.6.1'
+    implementation 'org.slf4j:slf4j-jdk14:1.6.1'
+    implementation 'javax.servlet:javax.servlet-api:3.0.1'
 }

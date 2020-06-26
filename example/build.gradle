@@ -24,10 +24,10 @@ android {
     }
 
     buildTypes {
-        debug{
+        debug {
             minifyEnabled false
         }
-        release{
+        release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), '../proguard-project.txt'
@@ -51,10 +51,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation 'com.shuyu:GSYVideoPlayer:7.1.4'
-
+    //implementation files('libs/slf4j-android-1.6.1-RC1.jar')
 
     implementation project(path: ':DroidDLNA')
-//    implementation 'com.github.and-fast:android-dlna:0.1-beta2'
-
+//    implementation('com.github.and-fast:android-dlna:0.3-beta03') {
+//        exclude group: "org.slf4j", module: "slf4j-api"
+//    }
 
 }
