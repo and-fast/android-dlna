@@ -42,8 +42,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    compile project(path: ':DroidDLNA')
     implementation 'com.shuyu:GSYVideoPlayer:7.1.4'
+
+
+    implementation project(path: ':DroidDLNA')
+//    implementation 'com.github.and-fast:android-dlna:0.1-beta'
+
 }

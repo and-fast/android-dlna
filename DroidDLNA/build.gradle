@@ -9,6 +9,12 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
