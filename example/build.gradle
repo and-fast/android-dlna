@@ -34,6 +34,12 @@ android {
         }
     }
 
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+
     lintOptions {
         abortOnError false
     }
@@ -48,6 +54,7 @@ dependencies {
 
 
     implementation project(path: ':DroidDLNA')
-//    api 'com.github.and-fast:android-dlna:0.1-beta'
+//    implementation 'com.github.and-fast:android-dlna:0.1-beta2'
+
 
 }

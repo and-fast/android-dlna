@@ -12,6 +12,7 @@ import com.shuyu.gsyvideoplayer.player.IjkPlayerManager;
 import com.shuyu.gsyvideoplayer.player.PlayerFactory;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
+
 import androidx.annotation.Nullable;
 
 public class TestLaunchActivity extends Activity {
@@ -37,6 +38,8 @@ public class TestLaunchActivity extends Activity {
 
         videoPlayer.setUp(new String(Base64.decode(path, Base64.DEFAULT)), true, name);
         videoPlayer.startPlayLogic();
+
+        //new HttpServlet()
     }
 
     @Override
