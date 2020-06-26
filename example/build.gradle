@@ -48,6 +48,6 @@ dependencies {
 
 
     implementation project(path: ':DroidDLNA')
-//    implementation 'com.github.and-fast:android-dlna:0.1-beta'
+//    api 'com.github.and-fast:android-dlna:0.1-beta'
 
 }
