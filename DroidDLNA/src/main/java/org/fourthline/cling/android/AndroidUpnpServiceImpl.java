@@ -15,10 +15,17 @@
 
 package org.fourthline.cling.android;
 
+import android.annotation.TargetApi;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.IBinder;
+
+import com.zxt.dlna.R;
+
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceConfiguration;
 import org.fourthline.cling.UpnpServiceImpl;
@@ -74,7 +81,12 @@ public class AndroidUpnpServiceImpl extends Service {
                 super.shutdown(true);
             }
         };
+
+        // 开启前台服务
     }
+
+
+
 
     protected UpnpServiceConfiguration createConfiguration() {
         return new AndroidUpnpServiceConfiguration();
@@ -99,6 +111,7 @@ public class AndroidUpnpServiceImpl extends Service {
         upnpService.shutdown();
         super.onDestroy();
     }
+
 
     protected class Binder extends android.os.Binder implements AndroidUpnpService {
 

@@ -3,7 +3,6 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 14
@@ -40,4 +39,6 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.6.1'
     implementation 'org.slf4j:slf4j-jdk14:1.6.1'
     implementation 'javax.servlet:javax.servlet-api:3.0.1'
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
 }

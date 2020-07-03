@@ -2,6 +2,7 @@
     package="com.zxt.dlna" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application >
         <service android:name="com.zxt.dlna.dmr.RenderPlayerService" />

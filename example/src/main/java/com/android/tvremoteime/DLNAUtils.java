@@ -58,6 +58,7 @@ public class DLNAUtils {
                 mMediaRenderer = new ZxtMediaRenderer(1, dlnaName, context);
 
                 upnpService.getRegistry().addDevice(mMediaRenderer.getDevice());
+
             }
 
             @Override

@@ -64,7 +64,7 @@ public class AVTransportService extends AbstractAVTransportService {
     public void setAVTransportURI(UnsignedIntegerFourBytes instanceId,
                                   String currentURI,
                                   String currentURIMetaData) throws AVTransportException {
-        Log.d(TAG, "setAVTransportURI: " + currentURI + "---" +currentURIMetaData );
+        Log.d(TAG, "setAVTransportURI: " + currentURI + "---" + currentURIMetaData);
         URI uri;
         try {
             uri = new URI(currentURI);
@@ -81,32 +81,32 @@ public class AVTransportService extends AbstractAVTransportService {
             try {
                 Representation representation = HttpFetch.fetch(URIUtil.toURL(uri), "HEAD", 500, 500, new HttpFetch.RepresentationFactory() {
                     public Representation createRepresentation(URLConnection urlConnection, InputStream is) throws IOException {
-                        return new Representation(urlConnection, (Object)null);
+                        return new Representation(urlConnection, (Object) null);
                     }
                 });
-                if(representation != null && currentURIMetaData == null){
-                   String  contentType = representation.getContentType() ;
-                   if(contentType != null){
-                       if(contentType.startsWith("image")){
-                           type = "image";
-                       }else if(contentType.startsWith("video")){
-                           type = "video";
-                       }else if(contentType.startsWith("audio")){
-                           type = "audio";
-                       }else{
-                           throw new AVTransportException(
-                                   ErrorCode.INVALID_ARGS, "URI format error."
-                           );
-                       }
-                       name = representation.getUrl().getFile();
-                   }else{
-                       throw new AVTransportException(
-                               ErrorCode.INVALID_ARGS, "URI error."
-                       );
-                   }
+                if (representation != null && currentURIMetaData == null) {
+                    String contentType = representation.getContentType();
+                    if (contentType != null) {
+                        if (contentType.startsWith("image")) {
+                            type = "image";
+                        } else if (contentType.startsWith("video")) {
+                            type = "video";
+                        } else if (contentType.startsWith("audio")) {
+                            type = "audio";
+                        } else {
+                            throw new AVTransportException(
+                                    ErrorCode.INVALID_ARGS, "URI format error."
+                            );
+                        }
+                        name = representation.getUrl().getFile();
+                    } else {
+                        throw new AVTransportException(
+                                ErrorCode.INVALID_ARGS, "URI error."
+                        );
+                    }
                 }
             } catch (Exception ex) {
-                if(TextUtils.isEmpty(currentURIMetaData)) {
+                if (TextUtils.isEmpty(currentURIMetaData)) {
                     throw new AVTransportException(
                             AVTransportErrorCode.RESOURCE_NOT_FOUND, ex.getMessage()
                     );
@@ -120,7 +120,7 @@ public class AVTransportService extends AbstractAVTransportService {
 
         // TODO: Check mime type of resource against supported types
         // TODO: DIDL fragment parsing and handling of currentURIMetaData
-        if(!TextUtils.isEmpty(currentURIMetaData)) {
+        if (!TextUtils.isEmpty(currentURIMetaData)) {
             type = "image";
             if (currentURIMetaData.contains("object.item.videoItem")) {
                 type = "video";
@@ -134,7 +134,7 @@ public class AVTransportService extends AbstractAVTransportService {
         }
         Log.d(TAG, name);
 
-        getInstance(instanceId).setURI(uri,type,name,currentURIMetaData);
+        getInstance(instanceId).setURI(uri, type, name, currentURIMetaData);
     }
 
     @Override
@@ -198,7 +198,7 @@ public class AVTransportService extends AbstractAVTransportService {
 
 //            final ClockTime ct = ClockTime.fromSeconds(ModelUtil.fromTimeString(target));
             int pos = (int) (Utils.getRealTime(target) * 1000);
-            Log.i(TAG,"### " + unit + " target: "+ target +"  pos: " + pos);
+            Log.i(TAG, "### " + unit + " target: " + target + "  pos: " + pos);
 
 //            if (getInstance(instanceId).getCurrentTransportInfo().getCurrentTransportState()
 //                    .equals(TransportState.PLAYING)) {
@@ -207,7 +207,7 @@ public class AVTransportService extends AbstractAVTransportService {
 //                getInstance(instanceId).play();
 //            } else if (getInstance(instanceId).getCurrentTransportInfo().getCurrentTransportState()
 //                    .equals(TransportState.PAUSED_PLAYBACK)) {
-                getInstance(instanceId).seek(pos);
+            getInstance(instanceId).seek(pos);
 //            }
 
         } catch (IllegalArgumentException ex) {

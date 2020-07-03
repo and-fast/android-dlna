@@ -51,11 +51,12 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation 'com.shuyu:GSYVideoPlayer:7.1.4'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
     //implementation files('libs/slf4j-android-1.6.1-RC1.jar')
 
     implementation project(path: ':DroidDLNA')
-//    implementation('com.github.and-fast:android-dlna:0.3-beta03') {
-//        exclude group: "org.slf4j", module: "slf4j-api"
-//    }
+//    implementation 'com.github.and-fast:android-dlna:0.3-beta04'
 
 }
