@@ -32,7 +32,7 @@ public class DLNAUtils {
     // 默认名称
     public static String getDLNANameSuffix(Context context) {
         SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences("dlna_settings", 0);
-        return sharedPreferences.getString("nameSuffix", "");
+        return sharedPreferences.getString("nameSuffix", "Test");
     }
 
     public static void startDLNAService(final Context context) {
