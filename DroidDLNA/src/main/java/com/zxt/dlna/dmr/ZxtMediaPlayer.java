@@ -18,8 +18,10 @@ import org.fourthline.cling.support.model.TransportState;
 import org.fourthline.cling.support.renderingcontrol.lastchange.ChannelMute;
 import org.fourthline.cling.support.renderingcontrol.lastchange.ChannelVolume;
 import org.fourthline.cling.support.renderingcontrol.lastchange.RenderingControlVariable;
+import org.greenrobot.eventbus.EventBus;
 
 import com.zxt.dlna.dmp.GPlayer.MediaListener;
+import com.zxt.dlna.dmp.RenderPlayerEvent;
 import com.zxt.dlna.util.Action;
 
 import android.app.Service;
@@ -146,12 +148,13 @@ public class ZxtMediaPlayer {
 
         //IJKPlayer.setMediaListener(new GstMediaListener());
 
-        Intent intent = new Intent();
-        intent.setClass(mContext, RenderPlayerService.class);
-        intent.putExtra("type", type);
-        intent.putExtra("name", name);
-        intent.putExtra("playURI", uri.toString());
-        mContext.startService(intent);
+        EventBus.getDefault().postSticky(new RenderPlayerEvent(name, uri.toString()));
+//        Intent intent = new Intent();
+//        intent.setClass(mContext, RenderPlayerService.class);
+//        intent.putExtra("type", type);
+//        intent.putExtra("name", name);
+//        intent.putExtra("playURI", uri.toString());
+//        mContext.startService(intent);
     }
 
     //    @Override
